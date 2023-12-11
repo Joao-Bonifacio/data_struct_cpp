@@ -1,16 +1,16 @@
 #include <iostream>
-#include "stack.h"
+#include "queue.h"
 using namespace std;
 
 int main(int argc, char const *argv[]){
-    Stack array_stack;
+    Queue array_queue;
     int item, option;
 
     do {
         cout << "0 => Exit"<<endl;
         cout << "1 => Add"<<endl;
         cout << "2 => Remove"<<endl;
-        cout << "3 => Print stack"<<endl;
+        cout << "3 => Print Queue"<<endl;
         cout << "> ";
         cin >> option;
         switch (option) {
@@ -18,17 +18,18 @@ int main(int argc, char const *argv[]){
             case 1:
                 cout << "Inster number: ";
                 cin >> item;
-                array_stack.push(item);
+                array_queue.push(item);
                 break;
             case 2:
-                item = array_stack.pop();
+                item = array_queue.pop();
                 cout << item << " removed."<<endl;
                 break;
             default:
-                array_stack.printstack();
+                array_queue.printQueue();
                 break;
         }
     } while (option != 0);
+    array_queue.~Queue();
     
     return 0;
 }

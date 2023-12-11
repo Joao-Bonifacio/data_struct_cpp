@@ -1,17 +1,16 @@
 const int max_itens = 100;
 
-class Stack{
+class Queue{
     private:
-    int lenght;
-    int *estrutura;
+    int first, last, *data;
 
     public:
-    Stack(); //Constructor
-    ~Stack(); //Destructor
+    Queue(); //Constructor
+    ~Queue(); //Destructor
     bool isFull();
     bool isEmpty();
     void push(int item);
     int pop();
-    void printstack();
+    void printQueue();
     int len();
 };

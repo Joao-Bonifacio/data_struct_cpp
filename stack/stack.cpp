@@ -4,7 +4,7 @@ using namespace std;
 
 Stack::Stack(){
     lenght = 0;
-    estrutura = new typeitem[max_itens];
+    estrutura = new int[max_itens];
 }
 Stack::~Stack(){
     delete[] estrutura;
@@ -15,14 +15,17 @@ bool Stack::isFull(){
 bool Stack::isEmpty(){
     return (lenght == 0);
 }
-void Stack::push(typeitem item){
+//
+void Stack::push(int item){
     if (isFull()) {
         cout << "The stack is full"<<endl;
     }
+    //-----------------------> Stack <-----------------------------
     estrutura[lenght] = item;
     lenght++;
+    //add:0 -> 1 -> 2...
 }
-typeitem Stack::pop(){
+int Stack::pop(){
     if (isEmpty()) {
         cout << "The stack is empty"<<endl;
         return 0;
@@ -30,6 +33,7 @@ typeitem Stack::pop(){
     lenght--;
     return estrutura[lenght];
 }
+//
 void Stack::printstack(){
     cout << "stack: [ ";
     for (int i = 0; i < lenght; i++) {
