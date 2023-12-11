@@ -34,7 +34,7 @@ void Stack::push(int item){
     }
     Node *newNode = new Node;
     newNode->value = item;
-    newNode->next = newNode; //Guarda o próximo endereço de memória
+    newNode->next = NodeTop; //Guarda o próximo endereço de memória
     NodeTop = newNode;
 }
 int Stack::pop(){
@@ -56,5 +56,5 @@ void Stack::printstack(){
         cout << tmpNode->value << " ";
         tmpNode = tmpNode->next;
     }
-    cout << " ]" <<endl;
+    cout << "]" <<endl;
 }
