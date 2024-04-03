@@ -1,0 +1,1 @@
+# Implementar hash table com linked list para colisões
