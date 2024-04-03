@@ -22,9 +22,16 @@ int Hash::getLenght() {
 }
 
 void Hash::insert(Aluno aluno) {
-    int local = HashFunction(aluno);
-    estrutura[local] = aluno;
-    itens_lenght++;
+    if (isFull()) {
+        cout<<"A tabela está cheia"<<endl;
+    } else {
+        int local = HashFunction(aluno);
+        while (estrutura[local].getRa() > 0) {
+            local = (local+1) % max_positions;
+        }
+        estrutura[local] = aluno;
+        itens_lenght++;
+    }
 }
 void Hash::remove(Aluno aluno) {
     int local = HashFunction(aluno);
